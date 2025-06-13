@@ -1,0 +1,2 @@
+Time resolution is 1 ps
+WARNING: File memfile.dat referenced on D:/Vivado/SOC_interface/GPIO/gpio_ad.v at line 34 cannot be opened for reading. Please ensure that this file is available in the current working directory or parent directory of xsim.dir location specified via -xsimdir switch.
