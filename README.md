@@ -1,23 +1,69 @@
-# MIPS 5-Stage Pipelined Architecture
+# ✨ Pipelined MIPS Processor + Factorial Accelerator + GPIO SoC ✨
 
-This project implements a 5-stage pipelined MIPS processor in Verilog, designed to enhance instruction throughput using classic pipeline stages and hazard handling mechanisms. The design includes support for data forwarding and hazard detection to minimize pipeline stalls and improve performance.
+---
 
-## Pipeline Stages
-The processor follows the standard 5-stage pipeline:
-1. **IF (Instruction Fetch)**: Fetches the instruction from memory.
-2. **ID (Instruction Decode)**: Decodes the instruction and reads register operands.
-3. **EX (Execute)**: Performs arithmetic/logic operations or computes addresses.
-4. **MEM (Memory Access)**: Accesses data memory for load/store instructions.
-5. **WB (Write Back)**: Writes the result back to the register file.
+## 🎯 Purpose
 
-## Key Features
-- ✅ **Data forwarding** to resolve data hazards without unnecessary stalls.
-- ✅ **Hazard detection unit** for load-use hazard handling.
-- ✅ Support for:
-  - R-type instructions (ADD, SUB, AND, OR, SLT, etc.)
-  - I-type instructions (LW, SW, BEQ, BNE, etc.)
-  - J-type instructions (JUMP)
-- ✅ Branch handling with pipeline flushing on taken branches.
-- ✅ Modular design (separate datapath, control unit, forwarding unit, hazard detection).
+Convert a basic 15-instruction, 32-bit single-cycle MIPS processor into a **5-stage pipelined design**.  
+Then, hook it up with a **factorial accelerator** and a simple **GPIO unit** using memory-mapped registers.
 
-## Project Structure
+---
+
+## 🛠 What’s Inside?
+
+This project is all about building a tiny **System-on-Chip (SoC)** that includes:
+
+- 🚀 A 5-stage pipelined MIPS processor  
+- 🔢 A factorial accelerator (handles 4-bit inputs)  
+- 🎛️ A simple GPIO unit for input/output  
+
+All connected through the MIPS local bus with memory-mapped interfaces.
+
+---
+
+## 🔍 Details & Features
+
+- Built on an **enhanced single-cycle MIPS** supporting these cool instructions:  
+  `multu`, `mfhi`, `mflo`, `jr`, `jal`, `sll`, `srl`  
+- Runs a factorial test program using nested procedure calls — stress testing the pipeline!  
+- Handles **data & control hazards** with forwarding and stalling to keep things smooth.  
+- GPIO reads the input number `n` and outputs the factorial `n!`.  
+
+---
+
+## 📊 What I Achieved
+
+- Designed & verified the pipelined datapath and control units.  
+- Built a hazard detection and forwarding unit to minimize stalls.  
+- Integrated the factorial accelerator & GPIO through memory-mapped registers.  
+- Compared performance between software-only and hardware-accelerated factorial calculations.  
+- Created graphs showing how the runtime changes with different input sizes.
+
+---
+
+## 🛠 How to Run / Simulate
+
+1. Open your favorite simulator (Vivado, ModelSim, etc.)  
+2. Load all Verilog source files + testbenches  
+3. Run the simulation & check waveforms for correctness  
+
+---
+
+## 📚 Future Plans
+
+- Add multiply/divide instructions support  
+- Improve hazard detection & pipeline efficiency  
+- Expand SoC with more peripherals & accelerators  
+- Try real FPGA implementation!
+
+---
+
+✌️ *Thanks for checking out my project!*  
+If you want to chat about MIPS or SoCs, hit me up!
+
+---
+
+**— Het Bhalala**  
+*Computer Engineering Graduate Student*  
+*github.com/Het-Bhalala*
+
